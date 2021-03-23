@@ -12,6 +12,7 @@ const IndexPage = () => {
           What do I like to do? Lots of course but definitely enjoy building
           websites.
         </p>
+        <Link to="/content/about">Go to About</Link>
       </div>
     </Layout>
   );

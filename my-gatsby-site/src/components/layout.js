@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+
+const LayoutStyle = styled.div`
+  margin: 3rem auto;
+  max-width: 650px;
+  padding: 0 1rem;
+`;
 
 export default function Layout({ children }) {
   return (
-    <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-      <h3>weishaodaren_</h3>
-      {children}
-    </div>
+    <Fragment>
+      <LayoutStyle>
+        <h3>weishaodaren_</h3>
+        {children}
+      </LayoutStyle>
+    </Fragment>
   );
 }

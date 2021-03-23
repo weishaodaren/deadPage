@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import Layout from '../../components/layout';
 
 const Content = () => {
@@ -14,7 +14,7 @@ const Content = () => {
   `);
   return (
     <Layout>
-      <>Go to Content</>
+      <Link to="/">Go to Content</Link>
       <h5>About {data.site.siteMetadata.title}</h5>
     </Layout>
   );
