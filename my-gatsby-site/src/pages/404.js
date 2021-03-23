@@ -1,11 +1,22 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
+import React from 'react';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
-// markup
 const NotFoundPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          one
+        }
+      }
+    }
+  `);
+  console.log(data, 'data');
   return (
     <main>
-      <Link to="/">Go home</Link>.
+      <Link to="/">Go Back</Link>
+      {/* <p>{data.site.siteMetadata.one}</p> */}
     </main>
   );
 };
