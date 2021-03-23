@@ -10,10 +10,7 @@ const LayoutStyle = styled.div`
 export default function Layout({ children }) {
   return (
     <Fragment>
-      <LayoutStyle>
-        <h3>weishaodaren_</h3>
-        {children}
-      </LayoutStyle>
+      <LayoutStyle>{children}</LayoutStyle>
     </Fragment>
   );
 }
