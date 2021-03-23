@@ -1,5 +1,14 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
+import Layout from '../components/layout';
+
+const Pelement = styled.p`
+  margin-top: 20px;
+  color: #126;
+  font-weight: bolder;
+  font-style: italic;
+`;
 
 const NotFoundPage = () => {
   const data = useStaticQuery(graphql`
@@ -12,12 +21,17 @@ const NotFoundPage = () => {
       }
     }
   `);
-  console.log(data, 'data');
+  const {
+    site: {
+      siteMetadata: { one },
+    },
+  } = data;
+
   return (
-    <main>
+    <Layout>
       <Link to="/">Go Back</Link>
-      {/* <p>{data.site.siteMetadata.one}</p> */}
-    </main>
+      <Pelement>{one}</Pelement>
+    </Layout>
   );
 };
 

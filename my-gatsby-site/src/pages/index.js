@@ -1,9 +1,33 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout';
+import styled from 'styled-components';
+
+const SPLIT_STRING = `@_weishaodaren_@`;
+
+const Pp = styled.p`
+  color: #126;
+  font-style: italic;
+`;
 
 const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          content
+        }
+      }
+    }
+  `);
+
+  const {
+    site: {
+      siteMetadata: { content },
+    },
+  } = data;
+
   return (
     <Layout>
       <Helmet title="weishaodaren_" />
@@ -16,15 +40,18 @@ const IndexPage = () => {
       <div>
         <h5>
           This is weishaodaren_ or 赵嘉伟
-          <Link to="/content">
-            do not click here
+          <a href="https://github.com/weishaodaren">
+            github
             <span role="img" aria-label="left">
               👈
             </span>
-          </Link>
+          </a>
         </h5>
-        <p>Fake World!</p>
+        {content.split(SPLIT_STRING).map((item, index) => (
+          <Pp key={index}>{item}</Pp>
+        ))}
       </div>
+      <Link to="/content">load ...</Link>
     </Layout>
   );
 };

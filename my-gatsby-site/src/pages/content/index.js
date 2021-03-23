@@ -8,28 +8,27 @@ const Content = () => {
     query {
       site {
         siteMetadata {
-          title
+          two
+          three
         }
       }
     }
   `);
+
+  const {
+    site: {
+      siteMetadata: { two, three },
+    },
+  } = data;
   return (
     <Layout>
-      <Helmet title={'Content'} />
-      <Link to="/">Go to Content</Link>
-      <h5>About {data.site.siteMetadata.title}</h5>
+      <Helmet title={'Nothing'} />
+      <Link to="/">Back</Link>
+      {[two, three].map((item, index) => (
+        <h2 key={index}>{item}</h2>
+      ))}
     </Layout>
   );
 };
-
-// export const query = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `;
 
 export default Content;
