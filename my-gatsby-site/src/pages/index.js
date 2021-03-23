@@ -1,18 +1,19 @@
-import * as React from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
+import { Link } from 'gatsby';
 import Layout from '../components/layout';
 
 const IndexPage = () => {
   return (
     <Layout>
       <Helmet title="weishaodaren_" />
-      <h1>Hello</h1>
+      <h1>Hello. 👋</h1>
       <div>
-        <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
-        <p>
-          What do I like to do? Lots of course but definitely enjoy building
-          websites.
-        </p>
+        <h5>
+          This is weishaodaren_ or 赵嘉伟
+          <Link to="/content"> do not click here 👈</Link>
+        </h5>
+        <p>this is fake world!</p>
       </div>
     </Layout>
   );
