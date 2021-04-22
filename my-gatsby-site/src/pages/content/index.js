@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import Helmet from 'react-helmet';
+
 import Layout from '../../components/layout';
 
 const Content = () => {
@@ -22,7 +23,7 @@ const Content = () => {
   } = data;
   return (
     <Layout>
-      <Helmet title={'Nothing'} />
+      <Helmet title={'fucktheworld'} />
       <Link to="/">Back</Link>
       {[two, three].map((item, index) => (
         <h2 key={index}>{item}</h2>

@@ -1,8 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import Layout from '../components/layout';
 import styled from 'styled-components';
+import Layout from '../components/layout';
 
 const SPLIT_STRING = `@_weishaodaren_@`;
 
@@ -39,9 +39,9 @@ const IndexPage = () => {
       </h1>
       <div>
         <h5>
-          This is weishaodaren_ or 赵嘉伟
+          {`This is  `}
           <a href="https://github.com/weishaodaren">
-            github
+            weishaodaren_ / 赵嘉伟
             <span role="img" aria-label="left">
               👈
             </span>
